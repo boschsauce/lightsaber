@@ -52,7 +52,7 @@ set cursorline                                               " hightlight curren
 set switchbuf=useopen                                        " This orders Vim to open the buffer.
 set mouse=a                                                  " Enable basic mouse behavior such as resizing buffers.
 set shell=/bin/zsh                                           " default shell to zsh
-set autochdir                                                " automatically set the working directory to the file being edited
+"set autochdir                                                " automatically set the working directory to the file being edited
 
 
 noremap <leader>bp :bprevious<cr>                            " , bp to to got previous buffer
