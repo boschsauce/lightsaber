@@ -28,7 +28,6 @@ def install_via_git(git_url)
     warn "git_url does not appear to end in .git...try again"
     return
   end
-  
 end
 
 task :submodules do

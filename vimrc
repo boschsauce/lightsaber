@@ -31,6 +31,22 @@ set tabstop=8                                                " actual tabs occup
 set wildignore=log/**,/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
+set history=1000                                             " Sets how many lines of history VIM has to remember
+set noerrorbells                                             " No error bells
+set novisualbell                                             " No visual bell
+set t_vb= 
+set tm=500
+set ffs=unix,dos,mac                                         " Use Unix as the standard file type
+set nobackup                                                 " Turn backup off
+set nowb
+set noswapfile
+
+set background=dark                                          " dark backgrounds rule
+colors molokai                                               " molokai color scheme"
+
+set guioptions-=L                                            " disable NERDTree left scroll bar
+
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm           " Remove the Windows ^M - when the encodings gets messed up
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -50,6 +66,7 @@ autocmd VimResized * :wincmd =
 " plugin settings
 let g:CommandTMaxHeight=20
 let g:NERDSpaceDelims=1
+let g:NERDTreeShowHidden=1
 let g:gitgutter_enabled = 1
 
 " Fix Cursor in TMUX
