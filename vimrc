@@ -1,13 +1,15 @@
-" set up pathogen, https://github.com/tpope/vim-pathogen
 filetype off
-call pathogen#infect()
+call pathogen#infect()                                      " set up pathogen, https://github.com/tpope/vim-pathogen
 filetype plugin indent on
 
 set nocompatible
 
 syntax enable
+
 set background=dark                                          " dark backgrounds rule
 colors molokai                                               " molokai color scheme"
+
+let mapleader = ','                                          " keyboard shortcuts
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
@@ -37,37 +39,38 @@ set wildmode=longest,list,full
 set history=1000                                             " Sets how many lines of history VIM has to remember
 set noerrorbells                                             " No error bells
 set novisualbell                                             " No visual bell
-set t_vb= 
+set t_vb=
 set tm=500
 set ffs=unix,dos,mac                                         " Use Unix as the standard file type
 set nobackup                                                 " Turn backup off
 set nowb
 set noswapfile
-set guioptions-=L                                           " disable NERDTree left scroll bar
-set guioptions-=T                                           " disable toolbar
-set cursorline                                              " hightlight current line
-set listchars=tab:▸\ ,trail:▫                               " display arrow and square for spaces
+set guioptions-=L                                            " disable NERDTree left scroll bar
+set guioptions-=T                                            " disable toolbar
+set listchars=tab:▸\ ,extends:❯,precedes:❮
+set cursorline                                               " hightlight current line
+set switchbuf=useopen                                        " This orders Vim to open the buffer.
+set mouse=a                                                  " Enable basic mouse behavior such as resizing buffers.
+set shell=/bin/zsh                                           " default shell to zsh
+set autochdir                                                " automatically set the working directory to the file being edited
 
 
+noremap <leader>bp :bprevious<cr>                            " , bp to to got previous buffer
+noremap <leader>bn :bnext<cr>                                " , bn to go to next buffer
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm           " Remove the Windows ^M - when the encodings gets messed up
 
-" Enable basic mouse behavior such as resizing buffers.
-set mouse=a
+autocmd BufWritePre * :%s/\s\+$//e                           " remove trailing whitespace
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd VimResized * :wincmd =                               " automatically rebalance windows on vim resize
+au FocusLost    * :silent! wall                              " Save when losing focus
+
 if exists('$TMUX')  " Support resizing in tmux
   set ttymouse=xterm2
 endif
 
-" keyboard shortcuts
-let mapleader = ','
-
-" md is markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
-
+"=============================================================================================================================
 " plugin settings
-"
+"=============================================================================================================================
 
 " Fix Cursor in TMUX
 if exists('$TMUX')
@@ -78,20 +81,36 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" GIT GUTTER
-let g:gitgutter_enabled = 1                             " On by default
+"=============================================================================================================================
+" GIT GUTTER https://github.com/airblade/vim-gitgutter
+"=============================================================================================================================
+let g:gitgutter_enabled = 1                                 " On by default
 
-" NERDTree settings
+"=============================================================================================================================
+" NERDTree settings https://github.com/scrooloose/nerdtree
+"=============================================================================================================================
 let g:NERDSpaceDelims=1
-let g:NERDTreeShowHidden=1                              " Show hidden files
+let g:NERDTreeShowHidden=1                                  " Show hidden files
+nmap 2 :NERDTreeFind<CR>                                    " Number 2 on keyboard hits the current file
+nmap 3 :NERDTreeToggle<CR>                                  " Number 3 on keyboard toggles nerdtree
 
-"
-" vim air line settings
-let g:airline_theme = 'wombat'
+"=============================================================================================================================
+" vim air line settings  https://github.com/bling/vim-airline
+"=============================================================================================================================
+let g:airline_theme = 'wombat'                             " https://github.com/bling/vim-airline/wiki/Screenshots
 
-"ctrl-p settings
-set runtimepath^=~/.vim/bundle/ctrlp.vim                " Load ctrlp vim plugin
-let g:ctrlp_map = '<c-p>'                               " 
-let g:ctrlp_cmd = 'CtrlP'                               "
+"=============================================================================================================================
+"ctrl-p settings https://github.com/kien/ctrlp.vim
+"=============================================================================================================================
+set runtimepath^=~/.vim/bundle/ctrlp.vim                   " Load ctrlp vim plugin
+let g:ctrlp_map = '<c-p>'                                  "
+let g:ctrlp_cmd = 'CtrlP'                                  "
 
-
+"=============================================================================================================================
+" vim rspec https://github.com/thoughtbot/vim-rspec
+"=============================================================================================================================
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+let g:rspec_command_launcher = "iterm"
