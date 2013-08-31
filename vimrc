@@ -52,7 +52,8 @@ set cursorline                                               " hightlight curren
 set switchbuf=useopen                                        " This orders Vim to open the buffer.
 set mouse=a                                                  " Enable basic mouse behavior such as resizing buffers.
 set shell=/bin/zsh                                           " default shell to zsh
-"set autochdir                                                " automatically set the working directory to the file being edited
+"set autochdir                                               " automatically set the working directory to the file being edited
+set nowrap                                                   " turn off word wrap
 
 
 noremap <leader>bp :bprevious<cr>                            " , bp to to got previous buffer
@@ -130,6 +131,7 @@ let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'js'
 "=============================================================================================================================
 " startify -
 "=============================================================================================================================
+let g:ctrlp_reuse_window = 'startify'
 let g:startify_list_order = ['files', 'sessions', 'bookmarks']
 let g:startify_custom_header = [
                 \ '        .-~|',
