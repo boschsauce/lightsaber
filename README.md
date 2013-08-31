@@ -41,7 +41,17 @@ Resolving deltas: 100% (162/162), done.
 Completed vim-gitgutter
 ```
 
+## Updating (via git)
 
+If you need to update lightsaber, you just go to where you installed lightsaber and run git pull and then rake.
+You'll get a new vimrc and all the new packages and updates to those packages. If you made any changes that you
+don't want blown away then stash them via git and then just apply the stash after done updating.
+
+```
+$ cd ~/lightsaber
+$ git pull
+$ rake
+```
 
 ## Submitting Pull Requests
 
