@@ -3,6 +3,9 @@
 
 Lightsaber is a rake installer for my vim configurations. It uses pathogen managed by git submodules. The goal is to be able to eventually have a nice elegant vim, perfect for coding ruby / rails / sinatra and easy to install.
 
+![picture alt](http://i.imgur.com/xqzfT4e.png?1 "Start Screen")
+![picture alt](http://i.imgur.com/TxA7UPS.png?1 "Editing File")
+
 ## Install
 
 Warning Existing Vim Users: I suggest moving all your configurations to a backup folder. This will not do it for you, yet.
