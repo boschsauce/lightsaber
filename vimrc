@@ -103,17 +103,21 @@ let g:airline_theme = 'wombat'                             " https://github.com/
 "ctrl-p settings https://github.com/kien/ctrlp.vim
 "=============================================================================================================================
 set runtimepath^=~/.vim/bundle/ctrlp.vim                   " Load ctrlp vim plugin
+let g:ctrlp_user_command = 'find %s -type f'               " MacOSX/Linux
+"let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'        " Windows (uncomment)
 let g:ctrlp_map = '<c-p>'                                  "
 let g:ctrlp_cmd = 'CtrlP'                                  "
+let g:ctrlp_working_path_mode = 'ra'
 
 "=============================================================================================================================
 " vim rspec https://github.com/thoughtbot/vim-rspec
 "=============================================================================================================================
+let g:rspec_command_launcher = "iterm2"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_command_launcher = "iterm"
+
 
 "=============================================================================================================================
 " syntastic https://github.com/scrooloose/syntastic
