@@ -65,8 +65,11 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd VimResized * :wincmd =                               " automatically rebalance windows on vim resize
 au FocusLost    * :silent! wall                              " Save when losing focus
 
+vnoremap < <gv                                               " Reselect visual block after indent/outdent
+vnoremap > >gv
+
 if exists('$TMUX')  " Support resizing in tmux
-  set ttymouse=xterm2
+set ttymouse=xterm2
 endif
 
 "=============================================================================================================================
