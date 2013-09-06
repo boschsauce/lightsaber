@@ -54,6 +54,7 @@ set mouse=a                                                  " Enable basic mous
 set shell=/bin/zsh                                           " default shell to zsh
 "set autochdir                                               " automatically set the working directory to the file being edited
 set nowrap                                                   " turn off word wrap
+set nolazyredraw                                             " Don't redraw while executing macros
 
 
 noremap <leader>bp :bprevious<cr>                            " , bp to to got previous buffer
@@ -63,6 +64,8 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm           " Remove the Window
 autocmd BufWritePre * :%s/\s\+$//e                           " remove trailing whitespace
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd VimResized * :wincmd =                               " automatically rebalance windows on vim resize
+autocmd! BufWritePost vimrc source ~/.vimrc                  " automatically reload vimrc if edited
+
 au FocusLost    * :silent! wall                              " Save when losing focus
 
 vnoremap < <gv                                               " Reselect visual block after indent/outdent
