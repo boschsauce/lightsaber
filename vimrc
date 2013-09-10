@@ -55,11 +55,12 @@ set shell=/bin/zsh                                           " default shell to 
 "set autochdir                                               " automatically set the working directory to the file being edited
 set nowrap                                                   " turn off word wrap
 set nolazyredraw                                             " Don't redraw while executing macros
-
+set binary                                                   " makes vim more suitable for editing binary files http://usevim.com/2012/06/20/vim-binary-files/
 
 noremap <leader>bp :bprevious<cr>                            " , bp to to got previous buffer
 noremap <leader>bn :bnext<cr>                                " , bn to go to next buffer
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm           " Remove the Windows ^M - when the encodings gets messed up
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>     " clear search matching
 
 autocmd BufWritePre * :%s/\s\+$//e                           " remove trailing whitespace
 autocmd BufRead,BufNewFile *.md set filetype=markdown
@@ -67,9 +68,6 @@ autocmd VimResized * :wincmd =                               " automatically reb
 autocmd! BufWritePost vimrc source ~/.vimrc                  " automatically reload vimrc if edited
 
 au FocusLost    * :silent! wall                              " Save when losing focus
-
-vnoremap < <gv                                               " Reselect visual block after indent/outdent
-vnoremap > >gv
 
 if exists('$TMUX')  " Support resizing in tmux
 set ttymouse=xterm2
