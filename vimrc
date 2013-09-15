@@ -7,7 +7,6 @@ set nocompatible
 syntax enable
 
 set background=dark                                          " dark backgrounds rule
-"colors molokai                                               " molokai color scheme"
 color solarized
 highlight SignColumn guibg=#002b36                           " matches solarized color scheme
 
