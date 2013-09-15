@@ -7,7 +7,9 @@ set nocompatible
 syntax enable
 
 set background=dark                                          " dark backgrounds rule
-colors molokai                                               " molokai color scheme"
+"colors molokai                                               " molokai color scheme"
+color solarized
+highlight SignColumn guibg=#002b36                           " matches solarized color scheme
 
 let mapleader = ','                                          " keyboard shortcuts
 
@@ -102,7 +104,7 @@ nmap 3 :NERDTreeToggle<CR>                                  " Number 3 on keyboa
 "=============================================================================================================================
 " vim air line settings  https://github.com/bling/vim-airline
 "=============================================================================================================================
-let g:airline_theme = 'wombat'                             " https://github.com/bling/vim-airline/wiki/Screenshots
+let g:airline_theme = 'solarized'                             " https://github.com/bling/vim-airline/wiki/Screenshots
 
 "=============================================================================================================================
 "ctrl-p settings https://github.com/kien/ctrlp.vim
