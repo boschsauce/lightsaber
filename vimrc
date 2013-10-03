@@ -7,8 +7,9 @@ set nocompatible
 syntax enable
 
 set background=dark                                          " dark backgrounds rule
-color solarized
-highlight SignColumn guibg=#002b36                           " matches solarized color scheme
+color molokai
+"color solarized                                             " uncomment this to use solarized theme. I kind of got sick of it
+"highlight SignColumn guibg=#002b36                           " matches solarized color scheme
 
 let mapleader = ','                                          " keyboard shortcuts
 
@@ -103,7 +104,8 @@ nmap 3 :NERDTreeToggle<CR>                                  " Number 3 on keyboa
 "=============================================================================================================================
 " vim air line settings  https://github.com/bling/vim-airline
 "=============================================================================================================================
-let g:airline_theme = 'solarized'                             " https://github.com/bling/vim-airline/wiki/Screenshots
+"let g:airline_theme = 'solarized'                             " https://github.com/bling/vim-airline/wiki/Screenshots
+let g:airline_theme = 'molokai'
 
 "=============================================================================================================================
 "ctrl-p settings https://github.com/kien/ctrlp.vim
