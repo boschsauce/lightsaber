@@ -98,6 +98,7 @@ let g:gitgutter_enabled = 1                                 " On by default
 "=============================================================================================================================
 let g:NERDSpaceDelims=1
 let g:NERDTreeShowHidden=1                                  " Show hidden files
+let NERDTreeChDirMode=2                                     " Should refresh NERDTree when new files are created
 nmap 2 :NERDTreeFind<CR>                                    " Number 2 on keyboard hits the current file
 nmap 3 :NERDTreeToggle<CR>                                  " Number 3 on keyboard toggles nerdtree
 
