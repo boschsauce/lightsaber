@@ -3,21 +3,27 @@ call pathogen#infect()                                      " set up pathogen, h
 filetype plugin indent on
 
 set nocompatible
-
-syntax enable
-
-set background=dark                                          " dark backgrounds rule
-color molokai
-"color solarized                                             " uncomment this to use solarized theme. I kind of got sick of it
-"highlight SignColumn guibg=#002b36                           " matches solarized color scheme
-
 let mapleader = ','                                          " keyboard shortcuts
-
-set autoindent
+set autoindent                                               " turn off the auto indent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
 set backupcopy=yes                                           " see :help crontab
-set clipboard=unnamed                                        " yank and paste with the system clipboard
+"" Copy/Paste/Cut
+
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
+noremap YY "+y<CR>
+noremap P "+gP<CR>
+noremap XX "+x<CR>
+
+if has('macunix')
+  " pbcopy for OSX copy/paste
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
+endif
+
 set directory-=.                                             " don't store swapfiles in the current directory
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
@@ -107,6 +113,7 @@ nmap 3 :NERDTreeToggle<CR>                                  " Number 3 on keyboa
 "=============================================================================================================================
 "let g:airline_theme = 'solarized'                             " https://github.com/bling/vim-airline/wiki/Screenshots
 let g:airline_theme = 'molokai'
+"let g:airline_theme = 'wombat'
 
 "=============================================================================================================================
 "ctrl-p settings https://github.com/kien/ctrlp.vim
@@ -169,4 +176,12 @@ let g:startify_custom_header = [
                 \ '\-----------/',
                 \ '',
                 \ ]
+
+"=============================================================================================================================
+" theme information
+"=============================================================================================================================
+"set background=dark                                          " dark backgrounds rule
+syntax enable
+colors molokai
+colorscheme molokai
 
