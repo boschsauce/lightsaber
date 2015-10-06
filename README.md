@@ -1,7 +1,7 @@
 
 # Lightsaber
 
-Lightsaber is a rake installer for my vim configurations. It uses pathogen managed by git submodules. The goal is to be able to eventually have a nice elegant vim, perfect for coding ruby / rails / sinatra and easy to install.
+Lightsaber is a rake installer for my Vim configurations. It uses pathogen managed by git submodules. The goal is to be able to eventually have a nice elegant Vim, perfect for coding ruby / rails / sinatra and easy to install.
 
 ![picture alt](http://i.imgur.com/xqzfT4e.png?1 "Start Screen")
 ![picture alt](http://i.imgur.com/TxA7UPS.png?1 "Editing File")
@@ -10,7 +10,7 @@ Lightsaber is a rake installer for my vim configurations. It uses pathogen manag
 
 Warning Existing Vim Users: I suggest moving all your configurations to a backup folder. This will not do it for you, yet.
 
-Installation is done via rake. All you have to do is run
+Installation is done via rake. All you have to do is run:
 
 ```
 $ cd ~
@@ -19,11 +19,11 @@ $ cd lightsaber
 $ rake install
 ```
 
-That's it. You should be able to fire up vim or mvim in the command prompt and start coding.
+That's it. You should be able to fire up Vim or MacVim in the command prompt and start coding.
 
 ## Adding vim plugins (via git)
 
-You can add vim plugins via a git url like this:
+You can add Vim plugins via a git url like this:
 
 ```
 $ cd ~/lightsaber
@@ -46,9 +46,9 @@ Completed vim-gitgutter
 
 ## Updating (via git)
 
-If you need to update lightsaber, you just go to where you installed lightsaber and run git pull and then rake.
-You'll get a new vimrc and all the new packages and updates to those packages. If you made any changes that you
-don't want blown away then stash them via git and then just apply the stash after done updating.
+If you need to update lightsaber, go to where you installed lightsaber and run git pull followed by rake.
+You'll get a new vimrc along with all the new packages and updates to those packages. If you made any changes that you
+don't want blown away, stash them via git and then apply the stash after done updating.
 
 ```
 $ cd ~/lightsaber
@@ -78,15 +78,15 @@ Fuzzy file, buffer, mru and tag finder.
 
 #### [nerdtree](https://github.com/scrooloose/nerdtree)
 
-A tree explorer plugin for vim.
+A tree explorer plugin for Vim.
 
 #### [supertab](https://github.com/ervandew/supertab)
 
-Perform all your vim insert mode completions with Tab
+Perform all your Vim insert mode completions with Tab
 
 #### [syntastic](https://github.com/scrooloose/syntastic)
 
-Syntax checking hacks for vim
+Syntax checking hacks for Vim
 
 #### [tabular](https://github.com/godlygeek/tabular)
 
@@ -96,7 +96,7 @@ Vim script for text filtering and alignment
 
 #### [vim-airline](https://github.com/bling/vim-airline)
 
-lean & mean statusline for vim that's light as air
+Lean & mean statusline for Vim that's light as air
 
 #### [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 
@@ -104,7 +104,7 @@ True Sublime Text style multiple selections for Vim
 
 #### [vim-startify](https://github.com/mhinz/vim-startify)
 
-A fancy start screen for Vim.
+A fancy start screen for Vim
 
 
 #### Git
@@ -115,13 +115,13 @@ A Git wrapper so awesome, it should be illegal
 
 #### [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
-A Vim plugin which shows a git diff in the gutter (sign column).
+A Vim plugin which shows a git diff in the gutter (sign column)
 
 #### Ruby
 
 #### [vim-ruby](https://github.com/vim-ruby/vim-ruby)
 
-Vim/Ruby Configuration Files.
+Vim/Ruby Configuration Files
 
 #### [vim-rails](https://github.com/tpope/vim-rails)
 
@@ -129,7 +129,7 @@ rails.vim: Ruby on Rails power tools
 
 #### [vim-ruby-refactoring](https://github.com/ecomba/vim-ruby-refactoring)
 
-Refactoring tool for Ruby in vim!
+Refactoring tool for Ruby in Vim!
 
 #### [vim-bundler](https://github.com/tpope/vim-bundler)
 
@@ -137,7 +137,7 @@ bundler.vim: Lightweight support for Ruby's Bundler
 
 #### [vim-endwise](https://github.com/tpope/vim-endwise)
 
-wisely add "end" in ruby, endfunction/endif/more in vim script, etc
+Wisely add "end" in ruby, endfunction/endif/more in Vim script, etc
 
 #### [vim-rspec](https://github.com/thoughtbot/vim-rspec)
 
@@ -152,7 +152,7 @@ rvm.vim: Switch Ruby versions from inside Vim
 
 #### [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
 
-CoffeeScript support for vim.
+CoffeeScript support for Vim
 
 #### [vim-handlebars](https://github.com/nono/vim-handlebars)
 
@@ -162,7 +162,7 @@ Vim plugin for Handlebars
 
 #### [vim-stylus](https://github.com/wavded/vim-stylus)
 
-Syntax Highlighting for Stylus.
+Syntax Highlighting for Stylus
 
 
 
